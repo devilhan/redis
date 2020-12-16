@@ -1,0 +1,22 @@
+Docker安装
+阿里安装:
+  yum install wget
+  wget http://download.redis.io/release/redis-5.0.5.tar.gz
+  tar xf redis-5.0.5.tar.gz
+  
+  进入源码目录src  README.md   --- 规避IO
+  make  
+  yum install gcc  
+  make distclean
+  make
+  cd src 查看已可执行程序
+  make install PREFIX=/opt/devilhan/redis5
+  vi /etc/profile
+    export REDIS_HOME=/opt/devilhan/redis5
+    export PATH=$PATH:$REDIS_HOME/bin
+  source /etc/profile
+  cd utils
+  ./install_server.sh
+  一个物理机中可以有多个redis实例（进程）,通过port区分
+  多个实例需各自配置文件
+  service redis_6379 start/stop/status  > linux /etc/init.d/**
