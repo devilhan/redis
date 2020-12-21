@@ -21,7 +21,7 @@ Docker安装
   多个实例需各自配置文件
   service redis_6379 start/stop/status  > linux /etc/init.d/**
   
-  string:
+  string:  (字符串string|数值int|位图bitmap)
     append  key value   -> Append a value to a key
     
     bitcount key [start end]  -> count set bits in a string
