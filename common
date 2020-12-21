@@ -20,3 +20,57 @@ Docker安装
   一个物理机中可以有多个redis实例（进程）,通过port区分
   多个实例需各自配置文件
   service redis_6379 start/stop/status  > linux /etc/init.d/**
+  
+  string:
+    append  key value   -> Append a value to a key
+    
+    bitcount key [start end]  -> count set bits in a string
+    
+    bitfield key [GET type offset] [SET type offset value] [INCRBY type offset increment] [OVERFLOW WRAP|SAT|FAIL]
+              -> Perform arbitrary bitfield integer operations on strings
+    
+    bitop  operation destkey key [key ...] -> Perform bitwise operations between strings
+    
+    bitpos key bit [start] [end] -> Find first bit set or clear in a string
+   
+    decr key -> Decrement the integer value of a key by one
+    
+    decrby key decrement -> Decrement the integer value of a key by the given number
+    
+    get key -> Get the value of a key
+    
+    getbit key offset -> Returns the bit value at offset in the string value stored at key
+    
+    getrange key start end -> Get a substring of the string stored at a key
+    
+    getset key value -> Set the string value of a key and return its old value
+    
+    incr key -> Increment the integer value of a key by one
+    
+    incrby key increment -> Increment the  integer value of a key by the given amount
+    
+    incrbyfloat key increment -> Increment the float value of a key by the given amount
+    
+    mget key [key ...] -> Get the value of all the given keys
+    
+    mset key value [key value...] -> Set multiple keys to multiple values
+    
+    msetnx key value [key value...] -> Set multiple keys to multiple values ,only if none of the keys exist
+    
+    psetex key milliseconds value -> set the value and expiration in milliseconds of a key
+    
+    set key value [expiration ex seconds | px milliseconds] [nx|xx]
+    
+    setbit key offset value -> Sets or clears the bit at offset in the string value stored at key
+    
+    setex key seconds value -> Set the value and expiration of a key
+    
+    setnx key value -> Set the value of a key ,only if the key does not exist
+    
+    setrange key offset value -> Overwrite part of a string at key starting at the specified offset
+    
+    strlen key -> Get the length of the value stored in a key 
+    
+    
+    
+redis 二进制安全：取字符流    
