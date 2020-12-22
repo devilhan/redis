@@ -71,6 +71,112 @@ Docker安装
     
     strlen key -> Get the length of the value stored in a key 
     
+    应用bitmap
+    
+      统计用户登录天数：
+        假设：
+          setbit devilhan 7 1  ->  第8天登录
+          setbit devilhan 1 1 ->  第二天登录
+          setbit devilhan 364 1 -> 第365天登录
+          
+          strlen devilhan  -> 最长消耗46个字节  -> 46
+          bitcount devilhan -2 -1  -> 取最后两个字节， 16天  -> 1
+     
+      618做活动：只要登录就要送礼物
+        仓库备份多少礼物
+        假设京东有2E用户
+            僵尸用户
+            冷热用户/忠诚用户
+            
+            活跃用户统计
+                1号~3号 连续登录去重
+                setbit 20190101 1 1   用户1 1号登录
+                setbit 20190102 1 1   用户1 2号登录
+                setbit 20190102 7 1   用户2 2号登录
+                bitop or destkey 20190101 20190102  -> 进行或运算
+                bitcount destkey 0 -1  -> 活跃用户为2
+                
+    list:
+      
+      blpop key [key ...] timeout  -> Remove and get the first element in a list,or block until one is available
+      
+      brpop key [key ...] timeout  -> Remove and get the last element in a list , or block until one is available
+      
+      brpoplpush source destination timeout -> Pop a value from a list , push it to another list and return it ; or block until one is available
+      
+      lindex key index -> Get an element from a list by its index
+      
+      linsert key before|after pivot value  ->  Insert an element before or after another element in a list  
+      
+      llen key -> Get the length of a list 
+      
+      lpop key -> Remove and get the first element in a list
+      
+      lpush key value [value ...]  -> Prepend one or multiple values to a list
+      
+      lpushx key value -> Prepend a value to a list ,only of the list exists
+      
+      lrange key start stop -> Get a range of elements from a list
+      
+      lrem key count value -> Remove elements from a list
+      
+      lset key index value -> Set the value of an element in a list by its index
+      
+      ltrim key start top -> Trim a list to the specified range
+       
+      rpop key -> Remove and get the last element in a list
+      
+      rpoplpush sourve destination -> Remove the last element in a list ,prepend it to another list and return it
+      
+      rpush key value [value ...] -> Append one or multiple values to a list
+      
+      rpushx key value -> Append a value to a list ,only if the list exists
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
     
     
 redis 二进制安全：取字符流    
