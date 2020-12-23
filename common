@@ -132,7 +132,38 @@ Docker安装
       
       rpushx key value -> Append a value to a list ,only if the list exists
       
+   
+   hash:
       
+      hdel key field [field ...] -> Delete one or more hash fields
+      
+      hexists key field -> Determine if a hash field exists
+      
+      hget key field -> Get the value of a hash field
+      
+      hgetall key -> Get all the fields and values in a hash
+      
+      hincrby key field increment -> Increment the integer value of a hash field by the given number
+      
+      hincybyfloat key field increment -> Increment the float value of a hash field by the given amount 
+      
+      hkeys key -> Get all the fields in a hash
+      
+      hlen key -> Get the number of fields in a hash
+      
+      hmget key field [field ...] -> Get the values of all the given hash fields
+      
+      hmset key field [field ...] -> Set multiple hash fields to multiple values
+      
+      hscan key cursor [match pattern][count count] -> Incrementally iterate hash fields and associated values
+      
+      hset key field value -> Set the string value of a hash field
+      
+      hsetnx key field value -> Set the value of a hash field ,only if the field does not exist
+      
+      hstrlen key field -> Get the length of the value of a hash field
+      
+      hvals key -> Get all the values in a hash
       
       
       
