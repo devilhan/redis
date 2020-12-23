@@ -170,11 +170,18 @@ Docker安装
       
       
       
+      sorted_set 如何实现排序的，增删改查的速度如何？
+        排序通过skip_list（跳跃表）实现的  随机造层 类平衡树
+        增删改查速度平均值相对最优
       
       
-      
-      
-      
+      pipeline:  降低通信成本
+        nc localhost 6379 建立连接socket
+        echo -e "set k2 99\n incr k2\n get k2" | nc localhost 6379
+        
+        
+        redis.cn/topics
+        
       
       
       
