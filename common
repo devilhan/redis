@@ -262,7 +262,7 @@ Docker安装
         增删改查速度平均值相对最优
       
       
-      pipeline:  降低通信成本
+      pipeline:  管道 -> 降低通信成本
         nc localhost 6379 建立连接socket
         echo -e "set k2 99\n incr k2\n get k2" | nc localhost 6379
         
@@ -270,12 +270,39 @@ Docker安装
         redis.cn/topics
         
       
-      
-      
-      
-      
-      
-      
+      pubsub: 发布订阅
+        
+        client sub--> |       | sub --> redis -> zset
+                      | redis | 
+        client pub--> |       | sub --> service --> kafka --> DBService --> Mysql
+        
+        psubscribe pattern [pattern ...] -> Listen for messages published to channels matching the given patterns
+        
+        publish channel message  -> Post a message to a channel
+        
+        pubsub subcommand [argument [argument ...]] -> Inspect the state of the pub/sub subsystem
+        
+        punsubscribe [pattern [pattern ...]] -> Stop listening for messages posted to channels matching the given patterns
+        
+        subscribe channel [channel ...] -> Listen for messages published to the given channels
+        
+        unsubscribe [channel [channel ...]] -> Stop listening for messages posted to the given channels
+        
+     transactions 事务：
+        
+        discard -> Discard all commands issued after multi
+        
+        exec -> Execute all commands issued after multi
+        
+        multi -> Mark the start of a transaction block
+        
+        unwatch -> Forget about all watched keys
+        
+        watch key [key ...] -> Watch the given keys to determine execution
+        
+      bloom ：布隆过滤器  (modules)
+        
+        解决缓存穿透 ：会让数据库做一些无用功
       
       
       
