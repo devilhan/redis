@@ -166,7 +166,94 @@ Docker安装
       hvals key -> Get all the values in a hash
       
       
+    set:
       
+      sadd key member [members ...] -> Add one or more members to a set
+      
+      scard key -> Get the number of members in a set
+      
+      sdiff key [key ...] -> Substract multiple sets 差集
+      
+      sdiffstore destination key [key ...] -> Substract multiple sets and store the resulting set in a key
+      
+      sinter key [key ...] -> Intersect multiple sets 交集
+      
+      sinterstore destination key [key ...] -> Intersect multiple sets and store the resulting set in a key
+      
+      sismember key member -> Determine if a given value is a member of a set
+      
+      smembers key -> Get all the members in a set
+      
+      smove source destination member -> Move a member from one set to another
+      
+      spop key [count] -> Remove and return one or multiple random members from a set
+      
+      srandmember key [count] -> Get one or multiple random members from a set 正数不重复，负数可重复 
+      
+      srem key member [member ...] -> Remove one or more members from a set
+      
+      sscan key cursor [match pattern] [count count] -> Incrementally iterate set elements
+      
+      sunion key [key ...] -> Add multiple sets  并集
+      
+      sunionstore destination key [key ...] -> Add multiple sets and store the resulting set in a key
+      
+      
+    sorted_set  : 应用歌曲播放量
+      
+      bzpopmax key [key ...] timeout -> Remove and return the member with the highest score from one or more sorted sets, or block until one is available
+      
+      bzpopmin key [key ...] timeout -> Remove and return the member with the lowest score from one or more sorted sets ,or block until one is available
+      
+      zadd key [nx|xx] [ch] [incr] score member [score member...] -> Add one or more members to a sorted set ,or update its score if it already exists
+      
+      zcard key -> Get the number of members in a sorted set
+      
+      zcount key min max -> Count the members in a sorted set with scores within the given values
+      
+      zincrby key increment member -> Increment the score of a member in a sorted set
+      
+      zinterstore destination numkeys key [key ...] [weight weight] [aggregate sum|min|max  ->
+          Intersect multiple sorted sets and store the resulting sorted set in a new key
+      
+      zlexcount key min max -> Count the number of members in a sorted set between a given lexicographical range
+      
+      zpopmax key [count] -> Remove and return members with the highest scores in a sorted set
+      
+      zpopmin key [count] -> Remove and return members with the lowest scores in a sorted set
+      
+      zrange key start stop [withscores] -> Return a range of members in a sorted set ,by index
+      
+      zrangebylex key min max [limit offset count] -> Return a range of members in a sorted set ,by lexicographical  字典序
+      
+      zrangebyscore key min max [withscores] [limit offset count] -> Return a range of members in a sorted set ,by score
+      
+      zrank key member -> Determine the index of a member in a sorted set
+      
+      zrem key member [member ...] -> Remove one or more members from a sorted set
+      
+      zremrangebylex key min max -> Remove all members in a sorted set between the given lexicographical range
+      
+      zremrangebyrank eky start stop -> Remove all members in a sorted set within the given indexes
+      
+      zremrangebyscore key min max -> Remove all members in a sorted set within the given scores
+      
+      zrevrange key start stop [withscores] -> Return a range of members in a sorted set ,by index ,with scores ordered from high to low
+      
+      zrevrangebylex key max min [limit offset count] -> 
+          Return a range of members in a sorted set ,by lexicographical range ,ordered from higher to lower strings
+          
+      zrevrangebyscore key max min [withscores][limit offset count] ->
+          Return a range of members in a sorted set, by score,with scores ordered from high to low
+          
+      zrevrank key member -> Determine the index of a member in a sorted set ,with scores ordered from high to low
+      
+      zscan key cursor [match pattern] [count count] -> Incrementally iterate sorted sets elements and associated scores
+      
+      zscore key member -> Get the score associated with the given member in a sorted set
+      
+      zunionstore destination numkeys key [key ...] [weights weight] [aggregate sum|min|max] ->  并集
+          Add multiple sorted sets and store the resulting sorted set in a new key
       
       
       
