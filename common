@@ -300,9 +300,23 @@ Docker安装
         
         watch key [key ...] -> Watch the given keys to determine execution
         
-      bloom ：布隆过滤器  (modules)
+      
+      bloom ：布隆过滤器  (modules)  ->  counting bloom
+      
+        bf.add devilhan xxx
+        bf.exists devilhan
+        bf.exists han
+      
+      cukcoo: 布谷鸟过滤器
+        cf.add 
         
-        解决缓存穿透 ：会让数据库做一些无用功
+        过滤器用于解决缓存穿透 ：会让数据库做一些无用功
+        
+        穿透了，不存在
+        客户端要增加redis中的key value 标记
+        数据库增加了元素，完成元素对布隆的添加
+     
+      
       
       
       
