@@ -372,6 +372,10 @@ Docker安装
        
        CAP 原则： C consistency A: availablity  P: partition tolerance
         
+       主从复制：slaveof   5.0+ -> replicaof
+       
+       哨兵模式：sentinel -> 监控 、提醒、故障自动转移
+        
        
        
       
