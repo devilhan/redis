@@ -376,15 +376,35 @@ Docker安装
        
        哨兵模式：sentinel -> 监控 、提醒、故障自动转移
         
-       
-       
+       客户端拆分: 
+          数据可以分类，交集不多，按逻辑业务拆分
+          数据没办法划分拆解，按算法modules： hash+取模  弊端：模数值是必须固定的，影响分布式下的扩展性
+                            random : lpush rpop -> 消息队列
+                            kemata 一致性哈希，没有取模  key ,node一起参与哈希计算   -> hsah crc16  crc32 fnv md5 映射算法
+          代理： tw  predixy cluster
+      
+                codis
+      
+          cluster ：无主模型
+            
+            数据分治：聚合操作很难实现  -> 事务
+      
+      twemproxy
+      predixy
+      
+      修改配置文件
+          去掉多行注释  -> :.,$ s/#// 
+          复制  -> :.,$y
       
       
+      面试常问：击穿、穿透、雪崩、分布式锁、API（jedis、luttce,springboot:low/high level）
       
-      
-      
-      
-      
+        击穿：redis作为缓存时，key的过期造成并发访问数据库（高并发） 
+                -> 组织高并发到达数据库 setnx(相当于锁)  
+                -> 避免发生死锁，设置锁过期时间  
+                ->  避免锁超时，使用多线程 ，一个负责取DB，一个负责监控是否取回来，更新锁时间
+        
+        穿透：
       
       
       
