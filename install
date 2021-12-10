@@ -1,0 +1,22 @@
+wget tar
+
+src
+  make
+  make install PREFIX=/opt/devilhan/redis6
+ 
+config env
+  
+utils
+  ./install_server/sh
+      一个物理机可以有多个redis实例，通过port区分
+      可执行程序就一份在目录，在村中未来的多个实例需要各自的配置文件，持久化目录等资源
+      
+      service redis_6379 start|stop|status
+      
+  
+  
+  回顾：select poll epoll -> check man-page
+  
+  
+                  
+    
